@@ -8,19 +8,15 @@
 % Notes			:Requiere aplicacion octave-online usar en consola preferentemente. 
 %program execution page :https://octave-online.net
 
+%Se encarga de limpiar variables y pantalla
 clc, clear  
-%Definimos la funcion
+%Funcion definida
 x=1:.05:4;
 f=inline('x.^2-3*x-2');
 plot(x,f(x),'r','LineWidth',2)
-
-%Para calcular la integral
 valor_de_Integral=quad(f,1,4)
-
-%Determina el valor del punto c
 Valor_Medio=strcat('x.^2-3*x-2==',num2str(1/3*valor_de_Integral))
-
-%Interpretación geométrica
+%Deduccion geometrica
 hold on
 area(x,f(x))
 altura=f(c(1));
